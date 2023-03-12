@@ -16,6 +16,18 @@ class BinaryTree:
         else:
             self.root = None
 
+    # Percurso em ordem simétrica
+    def simetric_traversal(self, node=None):
+        if node is None:
+            node = self.root
+        if node.left:
+            print('(', end='')
+            self.simetric_traversal(node.left)
+        print(node, end='')
+        if node.right:
+            self.simetric_traversal(node.right)
+            print(')', end='')
+
 
 if __name__ == "__main__":
     # tree = BinaryTree(7)
@@ -47,3 +59,5 @@ if __name__ == "__main__":
     n2.right = n3
 
     tree.root = n2
+
+    tree.simetric_traversal()
